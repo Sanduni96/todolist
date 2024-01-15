@@ -11,7 +11,7 @@
        <div class="col-12 d-flex todo-single align-center" *ngFor="let todo of todoList; let i=index;">
           <input type="checkbox" class="col-1 todo-checkbox" [(ngModel)] ="todo.value" (ngModelChange)="changeTodo(i)" >
           <p class="col-9">{{todo.content}}</p>
-          <button type="button" class="btn btn-outline-light text-danger col-1 del-btn">
+          <button type="button" class="btn btn-outline-light text-danger col-1 del-btn" (click)="removeTodo(i)">
             Remove
           </button>
         </div>
@@ -21,7 +21,7 @@
           <div class="col-12 d-flex todo-single align-center" *ngFor="let todo of finishedList; let i=index;">
              <input type="checkbox" class="col-1 todo-checkbox" [(ngModel)] ="todo.value" (ngModelChange)="changeFinished(i)">
              <p class="col-9">{{todo.content}}</p>
-             <button type="button" class="col-1 btn btn-outline-light text-danger del-btn">
+             <button type="button" class="col-1 btn btn-outline-light text-danger del-btn" (click)="removeTodo(i)">
               Remove
              </button>
            </div>

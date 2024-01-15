@@ -46,4 +46,7 @@ changeFinished(i: number){
   const item = this.finishedList.splice(i,1);
   this.todoList.push(item[0]);
   }
+removeTodo(i: number){
+  this.todoList.splice(i, 1);
+}
 }
