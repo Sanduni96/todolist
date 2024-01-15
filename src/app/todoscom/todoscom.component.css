@@ -1,0 +1,42 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css");
+
+.todo-block {
+    min-height: 400px;
+    width: 500px;
+    background: #fff;
+    margin: 20px 0;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px #9207ee;
+}
+.Add-button{
+    padding: 10px 30px;
+    cursor: pointer;
+    background:#8548f7;
+    border: 0;
+    outline: none;
+    position: relative;
+}
+.todo-header {
+    background: #d8aff0;
+    padding: 10px;
+    border-radius: 7px;
+}
+.todo-input {
+    margin-right: 10px;
+    padding:  7px;
+}
+.todo-checkbox {
+    height: 20px;
+}
+.mr-10{
+    margin-right: 10px;
+}
+h5{
+    background: #cd92f5;
+    padding: 5px;
+    color: rgb(63, 0, 92);
+}
+.todo-list-done  {
+    text-decoration: line-through;
+}
