@@ -1,31 +1,31 @@
 <div class="container"> 
-    <div class="col-12 d-flex kustify-content-center">
-      <div class ="col-4 todo-block">
+  <div class="col-12 d-flex kustify-content-center">
+    <div class ="col-4 todo-block">
 <h1 class="text-center mb-m todo header"> Todo List </h1>
-        <div class="col-12 d-flex align-center justify-content-between">
-            <input class="col-8 todo-input" placeholder="Enter text.." type="text" name="text" [(ngModel)]="todoValue">
-            <button type="submit" class="col-3 btn btn-primary" (click)="addTodo()"> Add </button> 
+      <div class="col-12 d-flex align-center justify-content-between">
+          <input class="col-8 todo-input" placeholder="Enter text.." type="text" name="text" [(ngModel)]="todoValue">
+          <button type="submit" class="col-3 btn btn-primary" (click)="addTodo()"> Add </button> 
+      </div>
+       <div class="todo-list mt-3">
+       <h5> Todo List </h5>
+       <div class="col-12 d-flex todo-single align-center" *ngFor="let todo of todoList; let i=index;">
+          <input type="checkbox" class="col-1 todo-checkbox" [(ngModel)] ="todo.value" (ngModelChange)="changeTodo(i)" >
+          <p class="col-9">{{todo.content}}</p>
+          <button type="button" class="btn btn-outline-light text-danger col-1 del-btn">
+            Remove
+          </button>
         </div>
-         <div class="todo-list mt-3">
-         <h5> Todo List </h5>
-         <div class="col-12 d-flex todo-single align-center" *ngFor="let todo of todoList; let i=index;">
-            <input type="checkbox" class="col-1 todo-checkbox" [(ngModel)] ="todo.value" (ngModelChange)="changeTodo(i)" >
-            <p class="col-9">{{todo.content}}</p>
-            <button type="button" class="btn btn-outline-light text-danger col-1 del-btn">
-                <i class= "bi bi-trash3"></i>
-            </button>
-          </div>
-         </div>
-         <div class="todo-list mt-3">
-            <h5> Finished List </h5>
-            <div class="col-12 d-flex todo-single align-center" *ngFor="let todo of finishedList; let i=index;">
-               <input type="checkbox" class="col-1 todo-checkbox" [(ngModel)] ="todo.value">
-               <p class="col-9">{{todo.content}}</p>
-               <button type="button" class="col-1 btn btn-outline-light text-danger del-btn">
-                Remove
-               </button>
-             </div>
-         </div>
-      </div> 
-    </div>
+       </div>
+       <div class="todo-list mt-3" *ngIf="finishedList.length>0">
+          <h5> Finished List </h5>
+          <div class="col-12 d-flex todo-single align-center" *ngFor="let todo of finishedList; let i=index;">
+             <input type="checkbox" class="col-1 todo-checkbox" [(ngModel)] ="todo.value" (ngModelChange)="changeFinished(i)">
+             <p class="col-9">{{todo.content}}</p>
+             <button type="button" class="col-1 btn btn-outline-light text-danger del-btn">
+              Remove
+             </button>
+           </div>
+       </div>
+    </div> 
+  </div>
 </div>
